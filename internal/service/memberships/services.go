@@ -3,6 +3,7 @@ package memberships
 import (
 	"context"
 
+	"github.com/hilmanXcode/DiskusiKan/internal/configs"
 	"github.com/hilmanXcode/DiskusiKan/internal/model/memberships"
 )
 
@@ -12,11 +13,13 @@ type membershiRepository interface {
 }
 
 type service struct {
+	cfg            *configs.Config
 	membershipRepo membershiRepository
 }
 
-func NewService(membershipRepo membershiRepository) *service {
+func NewService(cfg *configs.Config, membershipRepo membershiRepository) *service {
 	return &service{
+		cfg:            cfg,
 		membershipRepo: membershipRepo,
 	}
 }
