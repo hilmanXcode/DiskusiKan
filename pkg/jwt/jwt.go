@@ -1,6 +1,7 @@
 package jwt
 
 import (
+	"errors"
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"
@@ -36,7 +37,7 @@ func ValidateToken(tokenStr, secretKey string) (int64, string, error) {
 	}
 
 	if !token.Valid {
-		return 0, "", err
+		return 0, "", errors.New("invalid token.")
 	}
 
 	return int64(claims["id"].(float64)), claims["username"].(string), nil
