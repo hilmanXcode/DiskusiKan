@@ -37,7 +37,7 @@ Auth With Jwt, Signup, Middleware, Clean Architecture
 **Request Body:**
 ```json
 {
-    "username"  : "urUsernameHere"
+    "email"  : "urEmailHere@domain.com"
     "password"  : "ursecretPasswordHere"
 }
 ```
